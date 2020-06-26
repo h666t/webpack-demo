@@ -16,6 +16,7 @@ module.exports = {
   ],
   module: {
     rules: [
+      ...base.module.rules,
       {
         test: /\.css$/i,
         use: [
@@ -27,7 +28,6 @@ module.exports = {
           },
           'css-loader',
         ],
-        // use: ['style-loader', 'css-loader'],
       },
     ],
   },
