@@ -1,21 +1,12 @@
-var path = require('path');
-var HtmlWebpackPlugin = require('html-webpack-plugin');
+const base = require('./webpack.config.base.js')
 
 module.exports = {
+  ...base,
   mode: 'development',
   devtool: 'inline-source-map',
   devServer: {
-        contentBase: './dist',
-    },
-  entry: './src/index.js',
-  output: {
-    path: path.resolve(__dirname, 'dist'),
-    filename: 'index.[contenthash].js'
+    contentBase: './dist',
   },
-  plugins: [new HtmlWebpackPlugin({
-    title: 'My App',
-    template: 'src/assets/index.html'
-  })],
   module: {
     rules: [
       {
